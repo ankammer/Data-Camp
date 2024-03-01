@@ -1,5 +1,17 @@
+#load data
 yearly <- read_csv("data/yearly_deaths_by_clinic.csv")
 yearly
 # Updated file path
 monthly <- read.csv("data/monthly_deaths.csv")
+monthly
+
+
+#add new column with proportions
+#don't forget assignment 
+yearly <- yearly %>%
+mutate(proportion_deaths = deaths/births)
+
+yearly
+monthly <- monthly %>%
+mutate(proportion_deaths = deaths/births)
 monthly

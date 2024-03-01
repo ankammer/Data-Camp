@@ -15,3 +15,11 @@ yearly
 monthly <- monthly %>%
 mutate(proportion_deaths = deaths/births)
 monthly
+#lineplot for yearly data
+ggplot(yearly, aes(x = year, y = proportion_deaths, color = clinic)) + geom_line()
+
+#lineplot for monthly data
+
+ggplot(monthly, aes(date, proportion_deaths)) +
+  geom_line() +
+  labs(y= "Year", x = "Proportion Deaths")
